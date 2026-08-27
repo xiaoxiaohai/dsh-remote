@@ -1,0 +1,31 @@
+# Local build and package outputs
+/bin/
+/node_modules/
+/*.tgz
+/coverage/
+
+# Internal planning documents are never public
+/docs/crew/
+
+# Local and secret state
+.env
+.env.*
+*.token
+*.pem
+*.key
+*.p12
+*.pfx
+*.jks
+*.keystore
+*.mobileprovision
+*.sqlite
+*.sqlite-wal
+*.sqlite-shm
+installation.json
+frpc.toml
+
+# Editors and operating systems
+.DS_Store
+.idea/
+.vscode/
+*.swp
