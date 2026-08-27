@@ -1,0 +1,70 @@
+name: Bug report
+about: Report a reproducible non-security problem
+title: "[Bug]: "
+labels:
+  - bug
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Do not report vulnerabilities here. Use the private process in SECURITY.md. Never include QR links, pairing fragments, control secrets, tunnel tokens, cookies, private keys, private logs, or personal data.
+  - type: input
+    id: plugin-version
+    attributes:
+      label: Plugin version
+      placeholder: 0.4.0-beta.1
+    validations:
+      required: true
+  - type: input
+    id: dsh-version
+    attributes:
+      label: DSH version
+      placeholder: 0.1.0-rc.8
+    validations:
+      required: true
+  - type: dropdown
+    id: architecture
+    attributes:
+      label: Mac architecture
+      options:
+        - darwin-arm64
+        - darwin-x64
+    validations:
+      required: true
+  - type: dropdown
+    id: service
+    attributes:
+      label: Service mode
+      options:
+        - MusiToolbox hosted beta
+        - Compatible self-hosted service
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Reproduction steps
+      description: Use synthetic identifiers and redact all credentials.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behavior
+    validations:
+      required: true
+  - type: checkboxes
+    id: safety
+    attributes:
+      label: Sensitive-data check
+      options:
+        - label: I removed credentials, QR URLs, cookies, private logs, production identifiers, and personal data.
+          required: true
+        - label: This report is not a security vulnerability.
+          required: true
