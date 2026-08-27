@@ -1,0 +1,8 @@
+# DSH Remote hosted beta. Installation alone never opens a tunnel.
+- insert:
+    - id: dsh-remote
+      name: "@musitoolbox/dsh-remote"
+      config:
+        serviceUrl: https://remote.musitoolbox.com
+        enabled: false
+        autoStart: false

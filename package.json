@@ -1,0 +1,72 @@
+{
+  "name": "@musitoolbox/dsh-remote",
+  "version": "0.4.0-beta.1",
+  "description": "Opt-in mobile access to DeepSeek Harness Web through QR pairing and a managed FRP tunnel.",
+  "license": "MIT",
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./client": "./client/client.js",
+    "./package.json": "./package.json"
+  },
+  "keywords": [
+    "deepseek-harness",
+    "dsh",
+    "dsh-plugin",
+    "remote-access",
+    "mobile",
+    "phone",
+    "android",
+    "iphone",
+    "qr-pairing",
+    "frp"
+  ],
+  "engines": {
+    "node": ">=22"
+  },
+  "os": [
+    "darwin"
+  ],
+  "files": [
+    "bin",
+    "client",
+    "cordis.patch.yml",
+    "docs/SELF_HOSTING.md",
+    "lib",
+    "scripts/fetch-frpc.mjs",
+    "LICENSE",
+    "PRIVACY.md",
+    "README.md",
+    "README.zh.md",
+    "SECURITY.md",
+    "THIRD_PARTY_NOTICES.md"
+  ],
+  "scripts": {
+    "fetch-frpc": "node scripts/fetch-frpc.mjs all",
+    "test": "node --test test/*.test.mjs",
+    "check:docs": "node scripts/check-docs.mjs",
+    "check:secrets": "node scripts/check-secrets.mjs",
+    "check": "npm test && npm run check:docs && npm run check:secrets",
+    "prepack": "npm run fetch-frpc && npm run check",
+    "pack:verify": "node scripts/verify-package.mjs"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/",
+    "tag": "beta"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "inject": [
+        "@deepseek-ai/dsh-client-connection",
+        "@deepseek-ai/dsh-client-ui-slots",
+        "@deepseek-ai/dsh-client-ui-settings"
+      ],
+      "platform": "web"
+    }
+  }
+}
