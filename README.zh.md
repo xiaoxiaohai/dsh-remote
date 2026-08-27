@@ -1,8 +1,8 @@
 # DSH Remote
 
-[English](README.md) | 中文
+[English](README.md) | 中文 | [GitHub](https://github.com/xiaoxiaohai/dsh-remote)
 
-> **发布状态：** `@musitoolbox/dsh-remote` 是已经准备好的 Beta 包，但 npm 和 GitHub 仓库均**尚未发布**。下面的安装命令是计划中的命令；在授权所有者正式发布前不会成功。
+> **发布状态：** 这是 `@musitoolbox/dsh-remote` 的公开源码仓库，但 npm 包仍**尚未发布**。下面的安装命令是计划中的命令；在授权所有者正式发布前不会成功。
 
 DSH Remote 让手机打开 Mac 上现有的 DeepSeek Harness Web 界面。只有本机用户明确同意后，插件才会匿名注册 Mac、启动经过校验的 FRPC，并在 DSH 设置中提供二维码配对和已授权手机管理。
 
@@ -131,7 +131,7 @@ npm run pack:verify
 
 ## Beta 限制
 
-- npm 包和 GitHub 仓库尚未发布。
+- 源码仓库已经公开，但 npm 包尚未发布。
 - 托管服务没有正式 SLA、公开保留周期、账号恢复或完整的自助身份删除功能。
 - Android 手机端在稳定公开发布前仍需要正式 Release 签名。
 - iOS 公开分发和真机收尾仍未完成。

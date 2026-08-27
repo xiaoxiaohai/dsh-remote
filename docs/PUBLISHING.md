@@ -4,9 +4,9 @@ This file prepares a release; it does not authorize one. CI and repository scrip
 
 ## One-time repository setup
 
-1. Create the public GitHub repository with a clean history.
-2. Add the real `repository`, `homepage`, and `bugs` fields to `package.json`.
-3. Replace pending comparison links in `CHANGELOG.md`.
+1. Confirm the public GitHub repository has a clean history.
+2. Confirm `repository`, `homepage`, and `bugs` in `package.json` match the real repository.
+3. Add comparison links in `CHANGELOG.md` after the first Git tag exists.
 4. Enable GitHub Private Vulnerability Reporting.
 5. Add the `dsh-plugin` GitHub topic.
 6. Protect the default branch and require the CI workflow.

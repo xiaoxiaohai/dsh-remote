@@ -3,6 +3,14 @@
   "version": "0.4.0-beta.1",
   "description": "Opt-in mobile access to DeepSeek Harness Web through QR pairing and a managed FRP tunnel.",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xiaoxiaohai/dsh-remote.git"
+  },
+  "homepage": "https://github.com/xiaoxiaohai/dsh-remote#readme",
+  "bugs": {
+    "url": "https://github.com/xiaoxiaohai/dsh-remote/issues"
+  },
   "type": "module",
   "main": "lib/index.js",
   "exports": {

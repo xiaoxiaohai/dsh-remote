@@ -42,9 +42,12 @@ test('public package identity and bundle default to explicit opt-in', async () =
   assert.equal(manifest.publishConfig.registry, 'https://registry.npmjs.org/');
   assert.equal(manifest.publishConfig.tag, 'beta');
   assert.equal(manifest.dsh.bundle.patch, './cordis.patch.yml');
-  assert.equal(manifest.repository, undefined);
-  assert.equal(manifest.homepage, undefined);
-  assert.equal(manifest.bugs, undefined);
+  assert.deepEqual(manifest.repository, {
+    type: 'git',
+    url: 'git+https://github.com/xiaoxiaohai/dsh-remote.git',
+  });
+  assert.equal(manifest.homepage, 'https://github.com/xiaoxiaohai/dsh-remote#readme');
+  assert.deepEqual(manifest.bugs, { url: 'https://github.com/xiaoxiaohai/dsh-remote/issues' });
 
   const bundle = await readFile(new URL('../cordis.patch.yml', import.meta.url), 'utf8');
   assert.match(bundle, /name: "@musitoolbox\/dsh-remote"/u);

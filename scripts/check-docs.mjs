@@ -20,7 +20,11 @@ for (const file of requiredFiles) await access(join(root, file));
 const manifest = JSON.parse(await readFile(join(root, 'package.json'), 'utf8'));
 if (manifest.name !== '@musitoolbox/dsh-remote') throw new Error('unexpected npm package name');
 if (manifest.version !== '0.4.0-beta.1') throw new Error('unexpected beta version');
-if (manifest.repository || manifest.homepage || manifest.bugs) throw new Error('repository metadata must wait for the user-provided GitHub URL');
+if (manifest.repository?.type !== 'git' || manifest.repository?.url !== 'git+https://github.com/xiaoxiaohai/dsh-remote.git') {
+  throw new Error('unexpected GitHub repository metadata');
+}
+if (manifest.homepage !== 'https://github.com/xiaoxiaohai/dsh-remote#readme') throw new Error('unexpected package homepage');
+if (manifest.bugs?.url !== 'https://github.com/xiaoxiaohai/dsh-remote/issues') throw new Error('unexpected issue tracker');
 if (manifest.publishConfig?.registry !== 'https://registry.npmjs.org/' || manifest.publishConfig?.tag !== 'beta') {
   throw new Error('npm publish configuration is not pinned to the official beta registry');
 }
@@ -39,6 +43,7 @@ const sharedFacts = [
   'darwin-x64',
   'darwin-arm64',
   'dsh plugin --profile web add @musitoolbox/dsh-remote@beta',
+  'https://github.com/xiaoxiaohai/dsh-remote',
 ];
 for (const fact of sharedFacts) {
   if (!english.includes(fact)) throw new Error(`English README is missing ${fact}`);

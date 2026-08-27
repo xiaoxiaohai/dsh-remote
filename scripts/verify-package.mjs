@@ -78,6 +78,9 @@ try {
   const manifest = JSON.parse(await readFile(join(packageDir, 'package.json'), 'utf8'));
   if (manifest.name !== '@musitoolbox/dsh-remote' || manifest.version !== '0.4.0-beta.1') throw new Error('packed identity mismatch');
   if (manifest.publishConfig?.registry !== 'https://registry.npmjs.org/' || manifest.publishConfig?.tag !== 'beta') throw new Error('packed publish target mismatch');
+  if (manifest.repository?.url !== 'git+https://github.com/xiaoxiaohai/dsh-remote.git') throw new Error('packed repository metadata mismatch');
+  if (manifest.homepage !== 'https://github.com/xiaoxiaohai/dsh-remote#readme') throw new Error('packed homepage mismatch');
+  if (manifest.bugs?.url !== 'https://github.com/xiaoxiaohai/dsh-remote/issues') throw new Error('packed issue tracker mismatch');
   if (manifest.dsh?.bundle?.patch !== './cordis.patch.yml') throw new Error('packed DSH bundle manifest is missing');
 
   const bundle = await readFile(join(packageDir, 'cordis.patch.yml'), 'utf8');

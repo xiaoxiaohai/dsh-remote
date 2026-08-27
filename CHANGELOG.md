@@ -4,7 +4,7 @@ All notable changes to this project will be documented here. The format follows 
 
 ## [Unreleased]
 
-- GitHub repository URL, issue tracker, and npm publication are pending.
+- Public GitHub repository metadata and the issue tracker are configured; npm publication is pending.
 - Android production signing and public iOS distribution remain pending.
 
 ## [0.4.0-beta.1] - 2026-08-27
@@ -27,4 +27,4 @@ All notable changes to this project will be documented here. The format follows 
 
 - Historical native task, approval, danger, audit, token, and gateway modules that are not loaded by the current remote-Web plugin.
 
-Comparison links will be added after the user provides the public GitHub repository URL.
+Repository comparison links will be added when the first Git tag is created.

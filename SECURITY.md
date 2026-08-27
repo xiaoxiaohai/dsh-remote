@@ -12,7 +12,7 @@ Only the newest `0.4.x` beta release is intended to receive security fixes. No n
 
 Do not open a public issue for a suspected vulnerability or include a QR URL, pairing fragment, control secret, tunnel token, session cookie, private key, production log, or personal data in any issue.
 
-Before the first public release, the repository owner must enable **GitHub Private Vulnerability Reporting** under **Settings → Security → Private vulnerability reporting**. After it is enabled, use **Security → Report a vulnerability** in this repository.
+Before the first public release, the repository owner must enable **GitHub Private Vulnerability Reporting** under **Settings → Security → Private vulnerability reporting**. After it is enabled, use [Security → Report a vulnerability](https://github.com/xiaoxiaohai/dsh-remote/security/advisories/new).
 
 If private reporting is not available, stop and contact the repository owner through a private channel. The package must not be published until a private reporting path exists. Response and remediation are best effort; this beta has no guaranteed security-response SLA.
 
