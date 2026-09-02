@@ -2,7 +2,7 @@
 
 English | [中文](README.zh.md) | [GitHub](https://github.com/xiaoxiaohai/dsh-remote)
 
-> **Beta status:** this is the public source repository for `@musitoolbox/dsh-remote`. Use the install command only after the official npm registry shows `0.4.0-beta.1` under the `beta` tag; registry publication is controlled by an authorized human owner.
+> **Beta status:** this is the public source repository for `@musitoolbox/dsh-remote`. Use the install command only after the official npm registry shows `0.4.0-beta.2` under the `beta` tag; registry publication is controlled by an authorized human owner.
 
 DSH Remote lets a phone open the existing DeepSeek Harness Web interface running on a Mac. The plugin registers an anonymous Mac only after local user consent, starts a verified FRPC process, and adds QR pairing plus authorized-phone controls to DSH Settings.
 
@@ -54,7 +54,7 @@ Restart a running `dsh web` process after adding or updating the plugin.
 
 ### Test from this source tree
 
-Before npm publication, a developer can build the verified binaries and install the local directory:
+Before a release, a developer can build the verified binaries and install the local directory:
 
 ```bash
 npm run fetch-frpc

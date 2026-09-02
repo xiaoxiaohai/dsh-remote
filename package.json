@@ -1,6 +1,6 @@
 {
   "name": "@musitoolbox/dsh-remote",
-  "version": "0.4.0-beta.1",
+  "version": "0.4.0-beta.2",
   "description": "Opt-in mobile access to DeepSeek Harness Web through QR pairing and a managed FRP tunnel.",
   "license": "MIT",
   "repository": {
@@ -40,9 +40,12 @@
     "bin",
     "client",
     "cordis.patch.yml",
+    "docs/PUBLISHING.md",
     "docs/SELF_HOSTING.md",
     "lib",
     "scripts/fetch-frpc.mjs",
+    "CHANGELOG.md",
+    "CONTRIBUTING.md",
     "LICENSE",
     "PRIVACY.md",
     "README.md",
@@ -57,7 +60,9 @@
     "check:secrets": "node scripts/check-secrets.mjs",
     "check": "npm test && npm run check:docs && npm run check:secrets",
     "prepack": "npm run fetch-frpc && npm run check",
-    "pack:verify": "node scripts/verify-package.mjs"
+    "pack:verify": "node scripts/verify-package.mjs",
+    "stage:build": "node scripts/build-publish-stage.mjs",
+    "stage:verify": "node scripts/verify-publish-stage.mjs"
   },
   "publishConfig": {
     "access": "public",
