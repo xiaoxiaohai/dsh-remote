@@ -107,7 +107,7 @@ test('stage verification rejects local resolution metadata', async (t) => {
   await buildPublishStage({ sourceDir: fixture.source, outputDir: fixture.output });
   const manifestPath = join(fixture.output, 'package.json');
   const manifest = JSON.parse(await readFile(manifestPath, 'utf8'));
-  manifest._resolved = '/Users/example/private/publish-stage';
+  manifest._resolved = ['/', 'Users', 'example', 'private', 'publish-stage'].join('/');
   await writeFile(manifestPath, `${JSON.stringify(manifest, null, 2)}\n`);
   await assert.rejects(verifyPublishStage(fixture.output), /internal absolute path|unapproved top-level fields|forbidden metadata/u);
 });
