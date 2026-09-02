@@ -2,7 +2,7 @@
 
 English | [中文](README.zh.md) | [GitHub](https://github.com/xiaoxiaohai/dsh-remote)
 
-> **Publication status:** this is the public source repository for `@musitoolbox/dsh-remote`. The npm package is **not yet published**. The install command below is planned and will not work until an authorized owner publishes the package.
+> **Beta status:** this is the public source repository for `@musitoolbox/dsh-remote`. Use the install command only after the official npm registry shows `0.4.0-beta.1` under the `beta` tag; registry publication is controlled by an authorized human owner.
 
 DSH Remote lets a phone open the existing DeepSeek Harness Web interface running on a Mac. The plugin registers an anonymous Mac only after local user consent, starts a verified FRPC process, and adds QR pairing plus authorized-phone controls to DSH Settings.
 
@@ -30,9 +30,11 @@ The Skill explains safe local setup. It cannot start the tunnel, change configur
 
 Windows and Linux hosts are not supported by this package.
 
-## Planned npm installation
+The hosted Android companion is the Release-signed `0.4.0-beta.1` build at `https://remote.musitoolbox.com/downloads/dsh-remote-android.apk`; the hosted `assetlinks.json` uses its matching Release certificate. The companion source and binary are not part of this plugin repository or npm package. Public iOS distribution remains pending.
 
-After the beta is published:
+## npm installation
+
+When the official npm registry shows the beta:
 
 ```bash
 dsh plugin --profile web add @musitoolbox/dsh-remote@beta
@@ -77,7 +79,7 @@ Treat a QR URL as a credential. Do not paste it into chat, issues, screenshots, 
 
 ## Update and removal
 
-Planned update command:
+Update command:
 
 ```bash
 dsh plugin --profile web update @musitoolbox/dsh-remote@beta
@@ -131,9 +133,7 @@ npm run pack:verify
 
 ## Beta limitations
 
-- The source repository is public, but the npm package is not published yet.
 - The hosted service has no general-availability SLA, formal retention schedule, account recovery, or full self-service identity deletion.
-- The Android companion still requires production release signing before a stable public launch.
 - Public iOS distribution and physical-device completion remain pending.
 - The settings card is currently Chinese; English UI localization remains pending.
 - A trusted gateway operator can process proxied DSH Web traffic.

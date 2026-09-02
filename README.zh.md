@@ -2,7 +2,7 @@
 
 [English](README.md) | 中文 | [GitHub](https://github.com/xiaoxiaohai/dsh-remote)
 
-> **发布状态：** 这是 `@musitoolbox/dsh-remote` 的公开源码仓库，但 npm 包仍**尚未发布**。下面的安装命令是计划中的命令；在授权所有者正式发布前不会成功。
+> **Beta 状态：** 这是 `@musitoolbox/dsh-remote` 的公开源码仓库。只有在 npm 官方 registry 已显示 `0.4.0-beta.1` 和 `beta` tag 后才能使用下面的安装命令；registry 发布只由获得授权的人类所有者执行。
 
 DSH Remote 让手机打开 Mac 上现有的 DeepSeek Harness Web 界面。只有本机用户明确同意后，插件才会匿名注册 Mac、启动经过校验的 FRPC，并在 DSH 设置中提供二维码配对和已授权手机管理。
 
@@ -30,9 +30,11 @@ Skill 只解释安全的本机设置步骤。它不能启动隧道、修改配�
 
 本包不支持 Windows 或 Linux 主机。
 
-## 计划中的 npm 安装方式
+托管 Android 手机端是位于 `https://remote.musitoolbox.com/downloads/dsh-remote-android.apk` 的 Release 签名 `0.4.0-beta.1`；托管 `assetlinks.json` 使用匹配的 Release 证书。手机端源码和二进制不属于本插件仓库或 npm 包。iOS 公开分发仍待完成。
 
-Beta 发布后执行：
+## npm 安装方式
+
+npm 官方 registry 显示 Beta 后执行：
 
 ```bash
 dsh plugin --profile web add @musitoolbox/dsh-remote@beta
@@ -77,7 +79,7 @@ dsh web
 
 ## 更新与移除
 
-计划中的更新命令：
+更新命令：
 
 ```bash
 dsh plugin --profile web update @musitoolbox/dsh-remote@beta
@@ -131,9 +133,7 @@ npm run pack:verify
 
 ## Beta 限制
 
-- 源码仓库已经公开，但 npm 包尚未发布。
 - 托管服务没有正式 SLA、公开保留周期、账号恢复或完整的自助身份删除功能。
-- Android 手机端在稳定公开发布前仍需要正式 Release 签名。
 - iOS 公开分发和真机收尾仍未完成。
 - 设置卡片目前是中文；英文 UI 本地化仍待完成。
 - 受信任的 Gateway 运营者可以处理被代理的 DSH Web 流量。

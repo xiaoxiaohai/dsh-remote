@@ -43,14 +43,25 @@ const sharedFacts = [
   'darwin-x64',
   'darwin-arm64',
   'dsh plugin --profile web add @musitoolbox/dsh-remote@beta',
+  'https://remote.musitoolbox.com/downloads/dsh-remote-android.apk',
   'https://github.com/xiaoxiaohai/dsh-remote',
 ];
 for (const fact of sharedFacts) {
   if (!english.includes(fact)) throw new Error(`English README is missing ${fact}`);
   if (!chinese.includes(fact)) throw new Error(`Chinese README is missing ${fact}`);
 }
-if (!/not yet published/iu.test(english)) throw new Error('English README must say the package is not yet published');
-if (!/尚未发布/u.test(chinese)) throw new Error('Chinese README must say the package is not yet published');
+if (!/official npm registry shows `0\.4\.0-beta\.1` under the `beta` tag/iu.test(english)) {
+  throw new Error('English README must make npm installation conditional on official registry availability');
+}
+if (!/npm 官方 registry 已显示 `0\.4\.0-beta\.1` 和 `beta` tag/u.test(chinese)) {
+  throw new Error('Chinese README must make npm installation conditional on official registry availability');
+}
+if (!/authorized human owner/iu.test(english) || !/获得授权的人类所有者/u.test(chinese)) {
+  throw new Error('Both READMEs must keep publication human-controlled');
+}
+for (const stale of [/not yet published/iu, /尚未发布/u, /requires production release signing/iu, /仍需要正式 Release 签名/u]) {
+  if (stale.test(english) || stale.test(chinese)) throw new Error(`stale release wording remains: ${stale}`);
+}
 
 async function markdownFiles(directory) {
   const output = [];

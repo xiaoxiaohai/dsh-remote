@@ -4,8 +4,8 @@ All notable changes to this project will be documented here. The format follows 
 
 ## [Unreleased]
 
-- Public GitHub repository metadata and the issue tracker are configured; npm publication is pending.
-- Android production signing and public iOS distribution remain pending.
+- Public GitHub repository metadata and the issue tracker are configured; the first npm beta candidate is prepared for human-controlled publication.
+- The hosted Android companion is now Release-signed with matching Digital Asset Links; public iOS distribution remains pending.
 
 ## [0.4.0-beta.1] - 2026-08-27
 

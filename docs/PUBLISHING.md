@@ -23,6 +23,10 @@ This file prepares a release; it does not authorize one. CI and repository scrip
 - Both Intel and Apple Silicon FRPC artifacts are present and verified.
 - No GitHub URL, npm version, release, marketplace listing, or CI result is claimed before it exists.
 
+### Current `0.4.0-beta.1` candidate evidence
+
+As of 2026-09-02, the hosted Android download is Release-signed and its Digital Asset Links certificate matches. The FRP tunnel credential copied into earlier private diagnostics has been rotated, GitHub Private Vulnerability Reporting is enabled, and the public iOS wording remains limited to distribution that actually exists. These facts do not replace the final official-registry ownership check, exact-tarball verification, or clean-profile installation required immediately before publication.
+
 ## Build and inspect
 
 ```bash
