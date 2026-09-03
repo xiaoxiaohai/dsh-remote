@@ -35,7 +35,7 @@ async function missing(path) {
 test('public package identity and bundle default to explicit opt-in', async () => {
   const manifest = JSON.parse(await readFile(new URL('../package.json', import.meta.url), 'utf8'));
   assert.equal(manifest.name, '@musitoolbox/dsh-remote');
-  assert.equal(manifest.version, '0.4.0-beta.1');
+  assert.equal(manifest.version, '0.4.0-beta.2');
   assert.equal(manifest.license, 'MIT');
   assert.deepEqual(manifest.os, ['darwin']);
   assert.equal(manifest.engines.node, '>=22');

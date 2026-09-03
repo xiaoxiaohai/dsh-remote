@@ -7,6 +7,8 @@ import { spawn } from 'node:child_process';
 
 const root = fileURLToPath(new URL('..', import.meta.url));
 const expectedFiles = [
+  'CHANGELOG.md',
+  'CONTRIBUTING.md',
   'LICENSE',
   'PRIVACY.md',
   'README.md',
@@ -18,6 +20,7 @@ const expectedFiles = [
   'bin/frp-LICENSE',
   'client/client.js',
   'cordis.patch.yml',
+  'docs/PUBLISHING.md',
   'docs/SELF_HOSTING.md',
   'lib/frpc.js',
   'lib/index.js',
@@ -76,7 +79,7 @@ try {
   }
 
   const manifest = JSON.parse(await readFile(join(packageDir, 'package.json'), 'utf8'));
-  if (manifest.name !== '@musitoolbox/dsh-remote' || manifest.version !== '0.4.0-beta.1') throw new Error('packed identity mismatch');
+  if (manifest.name !== '@musitoolbox/dsh-remote' || manifest.version !== '0.4.0-beta.2') throw new Error('packed identity mismatch');
   if (manifest.publishConfig?.registry !== 'https://registry.npmjs.org/' || manifest.publishConfig?.tag !== 'beta') throw new Error('packed publish target mismatch');
   if (manifest.repository?.url !== 'git+https://github.com/xiaoxiaohai/dsh-remote.git') throw new Error('packed repository metadata mismatch');
   if (manifest.homepage !== 'https://github.com/xiaoxiaohai/dsh-remote#readme') throw new Error('packed homepage mismatch');

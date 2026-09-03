@@ -4,8 +4,20 @@ All notable changes to this project will be documented here. The format follows 
 
 ## [Unreleased]
 
-- Public GitHub repository metadata and the issue tracker are configured; the first npm beta candidate is prepared for human-controlled publication.
-- The hosted Android companion is now Release-signed with matching Digital Asset Links; public iOS distribution remains pending.
+## [0.4.0-beta.2] - 2026-09-02
+
+### Fixed
+
+- Added a deterministic, fail-closed staging workflow for human-controlled npm publication.
+- The staged npm package keeps only English `README.md` at its root and moves the matching Chinese document to `docs/README.zh.md`, so npm selects English for the package page.
+- Directory publication metadata is verified to exclude local `_resolved` and `_from` paths.
+- Added explicit cleanup steps for the accidental beta.1 `latest` tag and beta.1 deprecation without unpublishing immutable history.
+
+### Changed
+
+- The npm package now includes the linked Changelog, Contributing guide, and Publishing checklist.
+- Public GitHub repository metadata, the issue tracker, required CI, branch protection, the `dsh-plugin` topic, and Private Vulnerability Reporting are configured.
+- The hosted Android companion is Release-signed `0.4.0-beta.1` with matching Digital Asset Links; public iOS distribution remains pending.
 
 ## [0.4.0-beta.1] - 2026-08-27
 

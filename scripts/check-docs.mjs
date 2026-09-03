@@ -19,7 +19,7 @@ const requiredFiles = [
 for (const file of requiredFiles) await access(join(root, file));
 const manifest = JSON.parse(await readFile(join(root, 'package.json'), 'utf8'));
 if (manifest.name !== '@musitoolbox/dsh-remote') throw new Error('unexpected npm package name');
-if (manifest.version !== '0.4.0-beta.1') throw new Error('unexpected beta version');
+if (manifest.version !== '0.4.0-beta.2') throw new Error('unexpected beta version');
 if (manifest.repository?.type !== 'git' || manifest.repository?.url !== 'git+https://github.com/xiaoxiaohai/dsh-remote.git') {
   throw new Error('unexpected GitHub repository metadata');
 }
@@ -40,6 +40,8 @@ const sharedFacts = [
   '@musitoolbox/dsh-remote',
   'remote.musitoolbox.com',
   '0.1.0-rc.8',
+  '0.4.0-beta.1',
+  '0.4.0-beta.2',
   'darwin-x64',
   'darwin-arm64',
   'dsh plugin --profile web add @musitoolbox/dsh-remote@beta',
@@ -50,10 +52,10 @@ for (const fact of sharedFacts) {
   if (!english.includes(fact)) throw new Error(`English README is missing ${fact}`);
   if (!chinese.includes(fact)) throw new Error(`Chinese README is missing ${fact}`);
 }
-if (!/official npm registry shows `0\.4\.0-beta\.1` under the `beta` tag/iu.test(english)) {
+if (!/official npm registry shows `0\.4\.0-beta\.2` under the `beta` tag/iu.test(english)) {
   throw new Error('English README must make npm installation conditional on official registry availability');
 }
-if (!/npm 官方 registry 已显示 `0\.4\.0-beta\.1` 和 `beta` tag/u.test(chinese)) {
+if (!/npm 官方 registry 已显示 `0\.4\.0-beta\.2` 和 `beta` tag/u.test(chinese)) {
   throw new Error('Chinese README must make npm installation conditional on official registry availability');
 }
 if (!/authorized human owner/iu.test(english) || !/获得授权的人类所有者/u.test(chinese)) {
